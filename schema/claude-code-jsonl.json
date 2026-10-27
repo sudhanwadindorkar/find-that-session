@@ -1,0 +1,49 @@
+{
+  "mappings": [
+    {
+      "id": "claude-code-jsonl-v1",
+      "versions": ">=2.1.0 <3.0.0",
+      "description": "Claude Code JSONL sessions with user/assistant messages, ai-title, and custom-title.",
+      "skipTypes": [
+        "attachment",
+        "file-history-snapshot",
+        "file-history-delta",
+        "thinking",
+        "permission-mode",
+        "mode",
+        "last-prompt",
+        "cost-state",
+        "api-request",
+        "api-request-blob",
+        "api-request-shape",
+        "queue-operation",
+        "atis-latch",
+        "system",
+        "pr-link",
+        "worktree-state",
+        "relocated",
+        "isolation-latch",
+        "agent-name"
+      ],
+      "messages": [
+        { "type": "user", "role": "user" },
+        { "type": "assistant", "role": "assistant" }
+      ],
+      "titles": [
+        { "type": "custom-title", "field": "customTitle", "custom": true },
+        { "type": "ai-title", "field": "aiTitle", "custom": false }
+      ],
+      "contentPath": ["message", "content"],
+      "content": {
+        "textBlockType": "text",
+        "textField": "text",
+        "toolUseType": "tool_use",
+        "toolNameField": "name",
+        "toolInputField": "input",
+        "toolInputKeys": ["file_path", "path", "filePath", "command", "pattern", "query"],
+        "commandKey": "command",
+        "knownBlockTypes": ["text", "tool_use", "tool_result", "thinking", "image"]
+      }
+    }
+  ]
+}

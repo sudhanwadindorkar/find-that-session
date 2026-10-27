@@ -1,0 +1,62 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# next.js / build
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# env & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+.id_rsa
+.id_ed25519
+
+# local app data / caches (may contain session content)
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# logs & OS
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+
+# editors / tooling
+.idea/
+.vscode/
+*.swp
+*.swo
+.vercel
+.turbo
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# local overrides
+*.local

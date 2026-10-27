@@ -1,0 +1,18 @@
+services:
+  web:
+    build: .
+    ports:
+      - "127.0.0.1:53681:53681"
+    environment:
+      CLAUDE_PROJECTS_DIR: /data/claude/projects
+      DATABASE_PATH: /data/app/find-that-session.db
+      TRANSFORMERS_CACHE: /data/app/models
+      HOSTNAME: 0.0.0.0
+      PORT: "53681"
+    volumes:
+      - ${HOME}/.claude/projects:/data/claude/projects:ro
+      - app-data:/data/app
+    restart: unless-stopped
+
+volumes:
+  app-data:
